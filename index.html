@@ -272,6 +272,21 @@
         .testimonial-author {
             font-weight: bold;
             color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
         }
         
         .steps {
@@ -723,7 +738,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">家族保険サポート</div>
+                <div class="logo">保険見直し相談室</div>
                 <a href="#contact" class="btn">無料相談はこちら</a>
             </div>
         </div>
@@ -820,7 +835,7 @@
             
             <div class="reason-card">
                 <div class="reason-title">
-                    <svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <polyline points="12 6 12 12 16 14"></polyline>
                     </svg>
@@ -908,7 +923,7 @@
         
         <section class="section">
             <h2 class="text-center">私たちがサポートします</h2>
-            <p class="text-center">家族保険サポートは、お客様一人ひとりに合った最適な保険プランをご提案します</p>
+            <p class="text-center">保険見直し相談室は、お客様一人ひとりに合った最適な保険プランをご提案します</p>
             
             <div class="steps">
                 <div class="step">
@@ -922,8 +937,8 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>ヒアリング</h3>
-                        <p>専門のアドバイザーがお客様のライフプランや現在の保険状況をヒアリングします。現在加入中の保険証券をご用意いただくと、より具体的なアドバイスが可能です。家族構成やライフスタイル、将来の目標などをお聞かせください。</p>
+                        <h3>カウンセリング</h3>
+                        <p>専門のアドバイザーがお客様のライフプランや現在の保険状況をカウンセリングします。現在加入中の保険証券をご用意いただくと、より具体的なアドバイスが可能です。家族構成やライフスタイル、将来の目標などをお聞かせください。</p>
                     </div>
                 </div>
                 
@@ -1091,32 +1106,50 @@
             <div class="testimonials">
                 <div class="testimonial-card">
                     <p class="testimonial-text">「第一子が生まれたタイミングで保険の見直しを考えていました。複数の保険会社を比較して最適なプランを提案してもらえて、保険料も月々5,000円も安くなりました。子どもの教育費の準備もできて安心です。」</p>
-                    <p class="testimonial-author">東京都 佐藤さん（34歳）</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S.T</div>
+                        東京都 S.T.さん（34歳）
+                    </div>
                 </div>
                 
                 <div class="testimonial-card">
                     <p class="testimonial-text">「マイホーム購入に伴い、万が一のときの家族の生活が心配でした。親身になって相談に乗ってくれて、安心できる保障内容になりました。住宅ローンの返済が終わるまでの保障と、その後の老後の備えまで考慮したプランを提案してもらえました。」</p>
-                    <p class="testimonial-author">神奈川県 田中さん（42歳）</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">T.K</div>
+                        神奈川県 T.K.さん（42歳）
+                    </div>
                 </div>
                 
                 <div class="testimonial-card">
                     <p class="testimonial-text">「複数の保険に入っていましたが、内容が重複していることに気づかず無駄な保険料を払っていました。見直しで年間10万円以上節約できました。浮いたお金で家族旅行に行くことができ、とても感謝しています。」</p>
-                    <p class="testimonial-author">大阪府 山田さん（38歳）</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">Y.M</div>
+                        大阪府 Y.M.さん（38歳）
+                    </div>
                 </div>
                 
                 <div class="testimonial-card">
                     <p class="testimonial-text">「保険の内容がよくわからず不安でしたが、専門用語を使わずにわかりやすく説明してもらえました。自分に本当に必要な保障が何かを理解できたことが一番の収穫です。無理な勧誘もなく、安心して相談できました。」</p>
-                    <p class="testimonial-author">福岡県 井上さん（45歳）</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">I.K</div>
+                        福岡県 I.K.さん（45歳）
+                    </div>
                 </div>
                 
                 <div class="testimonial-card">
                     <p class="testimonial-text">「子どもが独立し、自分たちの老後が気になっていました。今までの保険を見直し、医療保障と年金準備に重点を置いたプランに変更。将来への不安が軽減されました。定期的なフォローアップも助かっています。」</p>
-                    <p class="testimonial-author">愛知県 鈴木さん（58歳）</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S.M</div>
+                        愛知県 S.M.さん（58歳）
+                    </div>
                 </div>
                 
                 <div class="testimonial-card">
                     <p class="testimonial-text">「起業するにあたり、会社員時代の福利厚生がなくなることが不安でした。事業主向けの保険プランを提案してもらい、自分自身と家族、そして事業の保障まで一括でカバーできました。税制面でのメリットも教えてもらえて助かりました。」</p>
-                    <p class="testimonial-author">千葉県 高橋さん（40歳）</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">T.H</div>
+                        千葉県 T.H.さん（40歳）
+                    </div>
                 </div>
             </div>
         </section>
@@ -1138,7 +1171,7 @@
                     相談にはどのくらい時間がかかりますか？
                 </div>
                 <div class="faq-answer">
-                    <p>初回のご相談は約60〜90分程度です。現在の保険状況やライフプランをヒアリングし、適切なアドバイスを行います。2回目以降は具体的なプラン提案や契約手続きを行い、30〜60分程度となります。</p>
+                    <p>初回のご相談は約60〜90分程度です。現在の保険状況やライフプランをカウンセリングし、適切なアドバイスを行います。2回目以降は具体的なプラン提案や契約手続きを行い、30〜60分程度となります。</p>
                 </div>
             </div>
             
@@ -1247,7 +1280,7 @@
     
     <footer>
         <div class="container">
-            <div class="logo">家族保険サポート</div>
+            <div class="logo">保険見直し相談室</div>
             <div class="footer-links">
                 <a href="#">会社概要</a>
                 <a href="#">プライバシーポリシー</a>
@@ -1258,7 +1291,7 @@
             </div>
             <p>〒100-0001 東京都千代田区丸の内1-1-1 丸の内センタービル10F</p>
             <p>TEL: 03-1234-5678（平日 9:00〜18:00）</p>
-            <p class="copyright">© 2023 家族保険サポート All Rights Reserved.</p>
+            <p class="copyright">© 2023 保険見直し相談室 All Rights Reserved.</p>
         </div>
     </footer>
 </body>
