@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家族の安心をサポート | 保険見直し相談サービス</title>
+    <meta name="description" content="ライフステージの変化に合わせた保険の見直しをサポート。家族が増えた方、環境が変わった方に最適な保険プランをご提案します。無料相談実施中！">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --text-color: #2b2d42;
+            --text-light: #555b6e;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #e63946;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            padding: 4rem 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--white) 0%, #e8f0fe 100%);
+            margin: 1rem 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(76, 201, 240, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(67, 97, 238, 0.1);
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.05);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.8rem;
+            color: var(--secondary-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.4rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .section {
+            padding: 3rem 1rem;
+            margin: 2rem 0;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            color: var(--primary-color);
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 4rem;
+            color: rgba(67, 97, 238, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .steps {
+            counter-reset: step-counter;
+            margin: 2rem 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .step-number {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .required {
+            color: var(--danger-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--success-color);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .benefit-card {
+            display: flex;
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            margin-right: 1rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        
+        .benefit-content {
+            flex-grow: 1;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-left {
+            left: 0;
+        }
+        
+        .timeline-right {
+            left: 50%;
+        }
+        
+        .timeline-left::after {
+            right: -10px;
+        }
+        
+        .timeline-right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            margin-top: 0.5rem;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .cta-text {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-white {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+        
+        .btn-white:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .reason-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .reason-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reason-icon {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background-color: #f5f7fa;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .check-icon {
+            color: var(--success-color);
+        }
+        
+        .x-icon {
+            color: var(--danger-color);
+        }
+        
+        .insurance-types {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .insurance-type-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .insurance-type-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .insurance-type-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .insurance-type-icon {
+            margin-right: 1rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        
+        /* Responsive styles */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .features, .testimonials, .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero {
+                padding: 5rem 2rem;
+            }
+            
+            .insurance-types {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-right {
+                left: 0%;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .testimonials {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .stats {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .insurance-types {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .timeline::after {
+                left: 50%;
+            }
+            
+            .timeline-item {
+                width: 50%;
+            }
+            
+            .timeline-left {
+                padding-right: 40px;
+                padding-left: 0;
+            }
+            
+            .timeline-right {
+                left: 50%;
+                padding-left: 40px;
+                padding-right: 0;
+            }
+            
+            .timeline-left::after {
+                right: -10px;
+                left: auto;
+            }
+            
+            .timeline-right::after {
+                left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">家族保険サポート</div>
+                <a href="#contact" class="btn">無料相談はこちら</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">無料相談実施中</span>
+                <h1>家族の未来を守る<br>最適な保険プランをご提案</h1>
+                <p class="subtitle">ライフステージの変化に合わせた保険の見直しで、大切な家族を守りましょう</p>
+                <a href="#contact" class="btn btn-large">無料相談を予約する</a>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="text-center">こんなお悩みはありませんか？</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <h3>家族が増えた</h3>
+                    <p>結婚や出産で家族が増え、今の保険では不安を感じている。子どもの教育費や将来の生活費を考えると、今の保障で十分なのか心配。</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    <h3>住宅購入を検討中</h3>
+                    <p>マイホーム購入に伴い、ローン返済中の保障を考えたい。万が一のときに家族に負担をかけたくない。住宅ローンの返済期間が長いので不安。</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <h3>保険料の負担が大きい</h3>
+                    <p>毎月の保険料が家計を圧迫している。もっと効率的な保障はないか。複数の保険に加入しているが、内容が重複していないか気になる。</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    <h3>保険の内容がわからない</h3>
+                    <p>昔加入した保険の内容をよく理解していない。今の自分のライフステージに合っているのか不安。保険証券を見ても専門用語が多くて理解できない。</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
+                    </svg>
+                    <h3>親の介護が心配</h3>
+                    <p>親の高齢化に伴い、将来の介護費用が心配。自分自身の老後の備えと親の介護、両方に対応できる保険プランを知りたい。</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <h3>保険選びに迷っている</h3>
+                    <p>保険会社や商品が多すぎて比較検討が難しい。自分に本当に必要な保障は何か、専門家のアドバイスが欲しい。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="text-center">なぜ保険の見直しが必要なのか？</h2>
+            <p class="text-center">多くの方が気づかないうちに、不適切な保険プランで無駄な保険料を支払っています</p>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">73%</div>
+                    <div class="stat-label">の方が保険の見直しで保険料の削減に成功</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">58%</div>
+                    <div class="stat-label">の方が保険の内容を正確に理解していない</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">42%</div>
+                    <div class="stat-label">の方が複数の保険で保障内容が重複している</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5年</div>
+                    <div class="stat-label">ごとの保険見直しが専門家の推奨</div>
+                </div>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-title">
+                    <svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <h3>ライフステージの変化</h3>
+                </div>
+                <p>結婚、出産、マイホーム購入など、人生の節目ごとに必要な保障は変わります。若い独身時代に加入した保険は、家族が増えた今の状況に合っていない可能性があります。ライフステージに合わせた保険の見直しが必要です。</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-title">
+                    <svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <h3>保険料の無駄を削減</h3>
+                </div>
+                <p>複数の保険に加入していると、知らず知らずのうちに保障内容が重複していることがあります。適切な見直しにより、必要な保障はそのままに、無駄な保険料を削減できます。当社のお客様は平均して年間約10万円の保険料削減に成功しています。</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-title">
+                    <svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <h3>保険商品の進化</h3>
+                </div>
+                <p>保険商品は年々進化しています。5年前、10年前に加入した保険と比較すると、現在の保険商品は保障内容が充実し、保険料も合理的になっていることが多いです。最新の保険商品に見直すことで、より良い保障を得られる可能性があります。</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-title">
+                    <svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
+                    </svg>
+                    <h3>家族の安心のために</h3>
+                </div>
+                <p>保険の本来の目的は、万が一のときに家族の生活を守ることです。適切な保険に加入することで、大切な家族に経済的な不安を残さず、安心を提供することができます。定期的な見直しで、家族を守る保障を最適化しましょう。</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="text-center">保険見直しのタイミング</h2>
+            <p class="text-center">以下のようなライフイベントがあったときは、保険の見直しを検討するべきタイミングです</p>
+            
+            <div class="timeline">
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>結婚したとき</h3>
+                        <p>一人暮らしから二人の生活になり、お互いを支え合う関係になります。パートナーの生活を守るための保障が必要になります。</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3>子どもが生まれたとき</h3>
+                        <p>子どもの養育費や教育費の準備が必要になります。万が一のときに子どもの将来を守る保障が重要です。</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>住宅を購入したとき</h3>
+                        <p>住宅ローンを組む場合、返済中の保障が必要です。団体信用生命保険だけでなく、病気やケガで働けなくなった場合の保障も検討すべきです。</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3>転職・独立したとき</h3>
+                        <p>勤務先の福利厚生が変わると、保障内容も変わります。特に独立・起業の場合は、自分で保障を準備する必要があります。</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>子どもが独立したとき</h3>
+                        <p>子育てが一段落すると、必要な保障も変わります。老後の資金準備に重点を置いた見直しが必要です。</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3>定年退職前後</h3>
+                        <p>収入が年金中心になると、必要な保障も変わります。医療保障や介護保障を中心とした見直しが重要です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="text-center">私たちがサポートします</h2>
+            <p class="text-center">家族保険サポートは、お客様一人ひとりに合った最適な保険プランをご提案します</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>無料相談予約</h3>
+                        <p>お電話またはウェブフォームから無料相談を予約。ご都合の良い日時をお選びいただけます。オンライン相談も対応可能ですので、ご自宅からでも気軽にご相談いただけます。</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>ヒアリング</h3>
+                        <p>専門のアドバイザーがお客様のライフプランや現在の保険状況をヒアリングします。現在加入中の保険証券をご用意いただくと、より具体的なアドバイスが可能です。家族構成やライフスタイル、将来の目標などをお聞かせください。</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>プラン提案</h3>
+                        <p>お客様のニーズに合った最適な保険プランをご提案。複数の保険会社から比較検討できます。保障内容と保険料のバランスを考慮し、ライフステージに合わせた最適なプランをご提案します。無理な勧誘は一切ありません。</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>契約サポート</h3>
+                        <p>ご契約の手続きもスムーズにサポート。必要書類の記入方法から健康告知のアドバイスまで、専門スタッフが丁寧にサポートします。契約後も定期的なフォローアップを行い、ライフステージの変化に合わせた見直しをご提案します。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>中立的な立場でアドバイス</h3>
+                        <p>特定の保険会社に偏らない、中立的な立場でアドバイスします。お客様にとって最適なプランを複数の保険会社から選定します。</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>わかりやすい説明</h3>
+                        <p>保険の専門用語をわかりやすく説明します。複雑な保険の仕組みも図表を使って丁寧に解説し、納得いくまでご説明します。</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>専門知識を持ったアドバイザー</h3>
+                        <p>保険のプロフェッショナルが対応します。FP資格を持ったアドバイザーが、保険だけでなく家計全体を考慮したアドバイスを提供します。</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>アフターフォロー</h3>
+                        <p>契約後も定期的にフォローアップします。ライフステージの変化に合わせて、継続的に最適な保障を提案します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="text-center">主な取扱保険の種類</h2>
+            <p class="text-center">お客様のニーズに合わせて、様々な保険商品をご提案します</p>
+            
+            <div class="insurance-types">
+                <div class="insurance-type-card">
+                    <div class="insurance-type-header">
+                        <div class="insurance-type-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
+                            </svg>
+                        </div>
+                        <h3>生命保険</h3>
+                    </div>
+                    <p>万が一のときに、残された家族の生活を守るための保険です。定期型と終身型があり、ライフステージに合わせて選べます。</p>
+                </div>
+                
+                <div class="insurance-type-card">
+                    <div class="insurance-type-header">
+                        <div class="insurance-type-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h3>医療保険</h3>
+                    </div>
+                    <p>入院や手術などの医療費をサポートする保険です。公的健康保険でカバーできない部分を補完します。</p>
+                </div>
+                
+                <div class="insurance-type-card">
+                    <div class="insurance-type-header">
+                        <div class="insurance-type-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
+                            </svg>
+                        </div>
+                        <h3>がん保険</h3>
+                    </div>
+                    <p>がんと診断された場合の治療費や入院費をカバーする保険です。早期発見・治療のための保障も充実しています。</p>
+                </div>
+                
+                <div class="insurance-type-card">
+                    <div class="insurance-type-header">
+                        <div class="insurance-type-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <h3>住宅ローン関連保険</h3>
+                    </div>
+                    <p>住宅ローン返済中の万が一に備える保険です。団体信用生命保険の他、三大疾病保障や八大疾病保障などもご提案します。</p>
+                </div>
+                
+                <div class="insurance-type-card">
+                    <div class="insurance-type-header">
+                        <div class="insurance-type-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>学資保険</h3>
+                    </div>
+                    <p>お子様の教育資金を計画的に準備するための保険です。教育費の積立と保障を兼ね備えています。</p>
+                </div>
+                
+                <div class="insurance-type-card">
+                    <div class="insurance-type-header">
+                        <div class="insurance-type-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18.5 2H5.5C3.6 2 2 3.6 2 5.5v13C2 20.4 3.6 22 5.5 22H16l6-6V5.5C22 3.6 20.4 2 18.5 2Z"></path>
+                                <polyline points="16 22 16 16 22 16"></polyline>
+                            </svg>
+                        </div>
+                        <h3>個人年金保険</h3>
+                    </div>
+                    <p>老後の生活資金を準備するための保険です。公的年金を補完し、ゆとりある老後生活をサポートします。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="text-center">お客様の声</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「第一子が生まれたタイミングで保険の見直しを考えていました。複数の保険会社を比較して最適なプランを提案してもらえて、保険料も月々5,000円も安くなりました。子どもの教育費の準備もできて安心です。」</p>
+                    <p class="testimonial-author">東京都 佐藤さん（34歳）</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「マイホーム購入に伴い、万が一のときの家族の生活が心配でした。親身になって相談に乗ってくれて、安心できる保障内容になりました。住宅ローンの返済が終わるまでの保障と、その後の老後の備えまで考慮したプランを提案してもらえました。」</p>
+                    <p class="testimonial-author">神奈川県 田中さん（42歳）</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「複数の保険に入っていましたが、内容が重複していることに気づかず無駄な保険料を払っていました。見直しで年間10万円以上節約できました。浮いたお金で家族旅行に行くことができ、とても感謝しています。」</p>
+                    <p class="testimonial-author">大阪府 山田さん（38歳）</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「保険の内容がよくわからず不安でしたが、専門用語を使わずにわかりやすく説明してもらえました。自分に本当に必要な保障が何かを理解できたことが一番の収穫です。無理な勧誘もなく、安心して相談できました。」</p>
+                    <p class="testimonial-author">福岡県 井上さん（45歳）</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「子どもが独立し、自分たちの老後が気になっていました。今までの保険を見直し、医療保障と年金準備に重点を置いたプランに変更。将来への不安が軽減されました。定期的なフォローアップも助かっています。」</p>
+                    <p class="testimonial-author">愛知県 鈴木さん（58歳）</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「起業するにあたり、会社員時代の福利厚生がなくなることが不安でした。事業主向けの保険プランを提案してもらい、自分自身と家族、そして事業の保障まで一括でカバーできました。税制面でのメリットも教えてもらえて助かりました。」</p>
+                    <p class="testimonial-author">千葉県 高橋さん（40歳）</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="text-center">よくある質問</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    相談は無料ですか？
+                </div>
+                <div class="faq-answer">
+                    <p>はい、相談は完全無料です。保険プランのご提案や保険商品の説明、現在の保険の見直しなど、すべて無料でご相談いただけます。</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    相談にはどのくらい時間がかかりますか？
+                </div>
+                <div class="faq-answer">
+                    <p>初回のご相談は約60〜90分程度です。現在の保険状況やライフプランをヒアリングし、適切なアドバイスを行います。2回目以降は具体的なプラン提案や契約手続きを行い、30〜60分程度となります。</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    相談時に必要な書類はありますか？
+                </div>
+                <div class="faq-answer">
+                    <p>現在加入中の保険がある場合は、保険証券をご用意いただくとスムーズです。また、家計の状況を把握するために、収入や支出の概要がわかる資料があるとより具体的なアドバイスが可能です。</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    オンライン相談は可能ですか？
+                </div>
+                <div class="faq-answer">
+                    <p>はい、ZoomやLINEビデオ通話などを使ったオンライン相談も対応しています。ご自宅からでも気軽にご相談いただけます。</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    どのような保険会社を取り扱っていますか？
+                </div>
+                <div class="faq-answer">
+                    <p>大手生命保険会社から中堅保険会社まで、幅広い保険会社の商品を取り扱っています。お客様のニーズに合わせて、最適な保険会社と商品をご提案します。</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    保険の見直しをすると、今の保険はどうなりますか？
+                </div>
+                <div class="faq-answer">
+                    <p>現在の保険内容を分析し、必要な保障はそのまま継続し、不要な部分や重複している部分を見直します。場合によっては、現在の保険を解約して新しい保険に加入することもありますが、メリット・デメリットを十分に説明した上でご判断いただきます。</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="cta-box">
+            <h2 class="cta-title">今すぐ無料相談を予約する</h2>
+            <p class="cta-text">専門のアドバイザーがあなたに最適な保険プランをご提案します。<br>家族の未来を守るための第一歩を、今日から始めましょう。</p>
+            <a href="#contact" class="btn btn-white">無料相談を予約する</a>
+        </div>
+        
+        <section id="contact" class="section">
+            <h2 class="text-center">無料相談のご予約</h2>
+            <p class="text-center">お気軽にご相談ください。専門のアドバイザーがお客様に最適な保険プランをご提案します。</p>
+            
+            <form>
+                <div class="form-group">
+                    <label for="name">お名前 <span class="required">*</span></label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">メールアドレス <span class="required">*</span></label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">電話番号 <span class="required">*</span></label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preferred-date">ご希望日 <span class="required">*</span></label>
+                    <input type="date" id="preferred-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preferred-time">ご希望時間帯 <span class="required">*</span></label>
+                    <select id="preferred-time" required>
+                        <option value="">選択してください</option>
+                        <option value="morning">午前（9:00〜12:00）</option>
+                        <option value="afternoon">午後（13:00〜17:00）</option>
+                        <option value="evening">夕方（17:00〜19:00）</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="consultation-type">ご相談内容 <span class="required">*</span></label>
+                    <select id="consultation-type" required>
+                        <option value="">選択してください</option>
+                        <option value="new">新規の保険加入について</option>
+                        <option value="review">現在の保険の見直しについて</option>
+                        <option value="family">家族の保険について</option>
+                        <option value="house">住宅ローン関連の保険について</option>
+                        <option value="retirement">老後の備えについて</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">詳細なご相談内容</label>
+                    <textarea id="message" rows="4" placeholder="現在の保険状況や気になっていることなど、詳しくお書きください"></textarea>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-large">無料相談を予約する</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="logo">家族保険サポート</div>
+            <div class="footer-links">
+                <a href="#">会社概要</a>
+                <a href="#">プライバシーポリシー</a>
+                <a href="#">利用規約</a>
+                <a href="#">お問い合わせ</a>
+                <a href="#">採用情報</a>
+                <a href="#">アクセス</a>
+            </div>
+            <p>〒100-0001 東京都千代田区丸の内1-1-1 丸の内センタービル10F</p>
+            <p>TEL: 03-1234-5678（平日 9:00〜18:00）</p>
+            <p class="copyright">© 2023 家族保険サポート All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
